@@ -5,18 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Word Document Analyzer</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
     <style>
+        /* Base styles */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            color: #333;
+            background-color: #f8f8f8;
         }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+                color: #f0f0f0;
+            }
+            
+            #results {
+                background-color: #2d2d2d;
+                border-color: #555 !important;
+            }
+            
+            button {
+                background-color: #0078d4 !important;
+                color: white !important;
+            }
+            
+            button:hover {
+                background-color: #106ebe !important;
+            }
+            
+            .test-result {
+                background-color: #2d2d2d;
+                color: #f0f0f0;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #f0f0f0;
+            }
+            
+            /* Ensure good contrast for test results */
+            .passed {
+                color: #4caf50 !important;
+                font-weight: bold;
+            }
+            
+            .failed {
+                color: #ff5252 !important;
+                font-weight: bold;
+            }
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
+        
         button {
             padding: 10px 15px;
             margin: 5px;
@@ -26,9 +72,11 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        
         button:hover {
             background-color: #106ebe;
         }
+        
         #results {
             margin-top: 20px;
             padding: 10px;
@@ -40,8 +88,8 @@
 <body>
     <div class="container">
         <h1>Word Document Analyzer</h1>
-        <button id="analyze">Analyze Document</button>
-        <button id="runTests">Run Tests</button>
+        <button id="analyze" onclick="analyzeDocument(); return false;">Analyze Document</button>
+        <button id="runTests" onclick="runTests(); return false;">Run Tests</button>
         <div id="results"></div>
     </div>
 </body>
