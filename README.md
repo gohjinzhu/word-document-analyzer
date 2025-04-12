@@ -83,7 +83,3 @@ The add-in uses the Word JavaScript API to:
 ## License
 
 [MIT License](LICENSE)
-
-## Support
-
-For support or questions, please open an issue on GitHub or contact the project maintainers. 
