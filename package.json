@@ -1,0 +1,12 @@
+{
+  "name": "word-document-analyzer",
+  "version": "1.0.0",
+  "description": "Word Document Analyzer Add-in",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -S -C cert.pem -K key.pem -p 3000"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
